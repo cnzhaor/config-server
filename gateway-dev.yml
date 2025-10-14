@@ -4,9 +4,6 @@ server:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true   # 允许通过服务名自动路由
       routes:
         - id: user-service
           uri: lb://user-service
