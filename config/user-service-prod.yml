@@ -2,9 +2,9 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://localhost:3306/sdf?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/spring?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
     username: root
-    password: root
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
