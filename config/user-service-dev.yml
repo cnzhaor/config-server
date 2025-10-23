@@ -18,22 +18,3 @@ logging:
   level:
     com.example.demo: debug
 
-feign:
-  circuit breaker:
-    enabled: true  # 启用Resilience4j支持
-
-resilience4j:
-  circuit breaker:
-    instances:
-      orderService:
-        slidingWindowSize: 10
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
-        permittedNumberOfCallsInHalfOpenState: 3
-        automaticTransitionFromOpenToHalfOpenEnabled: true
-  rate limiter:
-    instances:
-      orderLimiter:
-        limitForPeriod: 3        # 每秒最多3个请求
-        limitRefreshPeriod: 1s
-        timeoutDuration: 0
