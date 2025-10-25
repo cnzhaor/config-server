@@ -1,10 +1,15 @@
 spring:
-  application:
-    name: user-service
   datasource:
     url: jdbc:mysql://localhost:3306/sdf?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
     username: root
     password: root
+  sleuth:
+    sampler:
+      probability: 1.0  # 采样率(1.0表示100%)
+  zipkin:
+    base-url: http://localhost:9411/   # 你的 Zipkin Server 地址
+    sender:
+      type: web                        # 用 HTTP 方式上报
 
   jpa:
     hibernate:
